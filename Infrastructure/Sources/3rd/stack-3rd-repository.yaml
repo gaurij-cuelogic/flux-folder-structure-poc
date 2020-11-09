@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: chartmuseum-3rd
+  namespace: flux-system
+spec:
+  url: https://chartmuseum.dyp.cloud/stack-3rd/
+  secretRef:
+    name: https-credentials
+  interval: 1m
