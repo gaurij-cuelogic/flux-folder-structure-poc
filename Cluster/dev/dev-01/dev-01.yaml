@@ -7,7 +7,7 @@ spec: {}
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: screening
+  name: screening-dev-01
   namespace: flux-system
 spec:
   interval: 1m
@@ -19,3 +19,52 @@ spec:
         kind: HelmRepository
         name: chartmuseum-3rd
   targetNamespace: hhs-dev-01
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: applications-dev-01
+  namespace: flux-system
+spec:
+  interval: 1m
+  chart: 
+    spec:
+      chart: applications
+      version: '1.0.0'
+      sourceRef:
+        kind: HelmRepository
+        name: chartmuseum-dyp
+  targetNamespace: hhs-dev-01
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: notify-dev-01
+  namespace: flux-system
+spec:
+  interval: 1m
+  chart: 
+    spec:
+      chart: notify
+      version: '1.0.0'
+      sourceRef:
+        kind: HelmRepository
+        name: chartmuseum-csdn
+  targetNamespace: hhs-dev-01
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cockatoo-dev-01
+  namespace: flux-system
+spec:
+  interval: 1m
+  chart: 
+    spec:
+      chart: cockatoo
+      version: '1.0.0'
+      sourceRef:
+        kind: HelmRepository
+        name: chartmuseum-zoo
+  targetNamespace: hhs-dev-01
+---
