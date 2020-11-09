@@ -7,7 +7,7 @@ spec: {}
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: rabbitmq-ha
+  name: rabbitmq-ha-dev-02
   namespace: flux-system
 spec:
   interval: 1m
@@ -23,7 +23,7 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: applications
+  name: applications-dev-02
   namespace: flux-system
 spec:
   interval: 1m
@@ -39,7 +39,7 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: activemq
+  name: activemq-dev-02
   namespace: flux-system
 spec:
   interval: 1m
@@ -55,7 +55,7 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: cockatoo
+  name: cockatoo-dev-02
   namespace: flux-system
 spec:
   interval: 1m
